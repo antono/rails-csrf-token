@@ -21,26 +21,14 @@
 
     suite('<rails-csrf-token>', function() {
 
-      test('defines the "author" property', function() {
-        assert.equal(myEl.author, 'Dimitri Glazkov');
+      test('defines the "token" property', function() {
+        assert.equal(myEl.author, null);
       });
 
-      test('says hello', function() {
-        assert.equal(myEl.sayHello(), 'rails-csrf-token says, Hello World!');
-        var greetings = myEl.sayHello('greetings Earthlings');
-        assert.equal(greetings, 'rails-csrf-token says, greetings Earthlings');
+      test('defines the "url" property', function() {
+        assert.equal(myEl.url, '/api/me/token');
       });
-
-      test('fires lasers', function(done) {
-        myEl.addEventListener('rails-csrf-token-lasers-success', function(event) {
-          assert.equal(event.detail.sound, 'Pew pew pew!');
-          done();
-        });
-        myEl.fireLasers();
-      });
-
     });
   </script>
-
 </body>
 </html>
